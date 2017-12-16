@@ -10,7 +10,9 @@ using namespace std;
        char i_destination[10][20]={"LONDON","BERLIN","DUBAI","NEW YORK","BEIJING","PARIS","CAPE TOWN","TOKYO","LOS ANGELES","MUMBAI" };
        string user;
        string pass;
-       class passenger
+
+
+class passenger
 {
 public:
     virtual void getdata()
@@ -20,6 +22,8 @@ virtual void show()
  {
  }
 };
+
+
 class booking:public passenger
 {
 protected:
@@ -62,18 +66,22 @@ public:
    cin.getline(dest,60);
    cout<<endl<<endl;
    system("CLS");
+   system("color 5f");
  }
  void show()
  {
    cout<<setw(40)<<"Your E-Ticket is :"<<endl;
    int t=1;
-   int r=1234;
-  cout<<"            AIRLINE TICKET OF YOUR FLIGHT                                 "<<endl;
-  cout<<"|Ticket No."<<t<<"                                  13 DEC 2017            "<<endl;
+
+  cout<<"                           AIRLINE TICKET OF YOUR FLIGHT                  "<<endl;
   cout<<"|_________________________________________________________________________"<<endl;
+  cout<<"|_________________________________________________________________________"<<endl;
+  cout<<"|Ticket No."<<t<<"                                  15 DEC 2017           "<<endl;
+  cout<<"|*************************************************************************"<<endl;
   cout<<"|Resevation No. :"<<reservation_no<<"                                     "<<endl;
   cout<<"|_________________________________________________________________________"<<endl;
   cout<<"|Passenger Information :                                                  "<<endl;
+  cout<<"|*************************************************************************"<<endl;
   cout<<"|Name :"<<firstname<<" "<<lastname<<"                                     "<<endl;
   cout<<"|                                                                         "<<endl;
   cout<<"|Address :"<<address<<"                                                   "<<endl;
@@ -82,24 +90,25 @@ public:
   cout<<"|_________________________________________________________________________"<<endl;
   cout<<"|MOBILE NUMBER :"<<number<<"                                              "<<endl;
   cout<<"|_________________________________________________________________________"<<endl;
-     cout<<"|flight Information :                                                     "<<endl;
+  cout<<"|*************************************************************************"<<endl;
+  cout<<"|flight Information :                                                     "<<endl;
   cout<<"|                                                                         "<<endl;
   cout<<"|BOING 747                                                                "<<endl;
   cout<<"|_________________________________________________________________________"<<endl;
-  cout<<"|Depart :"<<currentloc<<"                                                      "<<endl;
+  cout<<"|Depart :"<<currentloc<<"                                                 "<<endl;
   cout<<"|Arrive :"<<dest<<"                                                       "<<endl;
   cout<<"|*BAGGAGE allowed 40 Kilos                                                "<<endl;
   cout<<"|*contact Airline to Confirm baggage allowance                            "<<endl;
   cout<<"|_________________________________________________________________________"<<endl;
 
-  ofstream outfile("E:\\E_ticket.txt");
+  /*ofstream outfile("E:\\E_ticket.txt");
         outfile<<" AIRLINE TICKET OF BANGLADESH                                "<<endl<<
    "|Ticket No."<<t<<"                                9 DEC 2017  "<<endl<<
       "|_________________________________________________________________________"<<endl<<
    "|Resevation No. :"<<reservation_no<<"                                     "<<endl<<
    "|__________________________________________________________________________"<<endl<<
       "|Passenger Information :                                                  "<<endl<<
-      "|Name :"<<lastname<<"/"<<firstname<<"                                     "<<endl<<
+      "|Name :"<<firstname<<"/"<<lastname<<"                                     "<<endl<<
       "|                                                                         "<<endl<<
       "|Address :"<<address<<"                                                   "<<endl<<
       "|_________________________________________________________________________"<<endl<<
@@ -111,13 +120,45 @@ public:
       "|Arrive :"<<dest<<"                                                       "<<endl<<
       "|*BAGGAGE allowed 40 Kilos                                                "<<endl<<
       "|*contact Airline to Confirm baggage allowance                            "<<endl<<
-      "|_________________________________________________________________________"<<endl;
+      "|_________________________________________________________________________"<<endl;*/
+      ofstream outfile("E:\\E_ticket.txt");
+        outfile<<"                           AIRLINE TICKET OF YOUR FLIGHT   "<<endl<<
+  "|_________________________________________________________________________"<<endl<<
+  "|_________________________________________________________________________"<<endl<<
+  "|Ticket No."<<t<<"                                  15 DEC 2017           "<<endl<<
+  "|*************************************************************************"<<endl<<
+  "|Resevation No. :"<<reservation_no<<"                                     "<<endl<<
+  "|_________________________________________________________________________"<<endl<<
+  "|Passenger Information :                                                  "<<endl<<
+  "|*************************************************************************"<<endl<<
+  "|Name :"<<firstname<<" "<<lastname<<"                                     "<<endl<<
+  "|                                                                         "<<endl<<
+  "|Address :"<<address<<"                                                   "<<endl<<
+  "|_________________________________________________________________________"<<endl<<
+  "|EMAIL ADDRESS :"<<email<<"                                               "<<endl<<
+  "|_________________________________________________________________________"<<endl<<
+  "|MOBILE NUMBER :"<<number<<"                                              "<<endl<<
+  "|_________________________________________________________________________"<<endl<<
+  "|*************************************************************************"<<endl<<
+  "|flight Information :                                                     "<<endl<<
+  "|                                                                         "<<endl<<
+  "|BOING 747                                                                "<<endl<<
+  "|_________________________________________________________________________"<<endl<<
+  "|Depart :"<<currentloc<<"                                                 "<<endl<<
+  "|Arrive :"<<dest<<"                                                       "<<endl<<
+  "|*BAGGAGE allowed 40 Kilos                                                "<<endl<<
+  "|*contact Airline to Confirm baggage allowance                            "<<endl<<
+  "|_________________________________________________________________________"<<endl;
+
+
+
 
 t=t+1;
-r=r+1;
+
 
  }
 };
+
 
 class search
 {
@@ -208,7 +249,7 @@ public:
 
    cout<<" FLIGHT AVAILABLE ON THIS ROUTE"<<endl;
 
-   b_seat=30;
+   b_seat=70;
 
    e_seat=40;
 
@@ -261,7 +302,6 @@ public:
     break;
 
    }
-   //t1.getdata();
 
    system("CLS");
    booking::show();
@@ -314,7 +354,9 @@ public:
 }
  };
 
- class international:public booking
+
+
+class international:public booking
 
  {
 
@@ -334,8 +376,6 @@ public:
 
   char g;
 
-    // mytime t1;
-
 
  public:
 
@@ -349,10 +389,10 @@ public:
    v=0;
 
         cout<<"In which AIRLINE you want to travel"<<endl<<endl;
-  cout<<"1)BIMAN BANGLADESH"<<endl;
-  cout<<"2)US-BANGLA AIRLINES"<<endl;
-  cout<<"3)UNITED AIRWAYS"<<endl;
-  cout<<"4)NOVOAIR"<<endl;
+  cout<<"1)REGENT AIRWAYS"<<endl;
+  cout<<"2)HELLO AIR"<<endl;
+  cout<<"3)SOUTH ASIAN AIRLINES"<<endl;
+  cout<<"4)EASY FLY EXPRESS"<<endl;
   cout<<"enter your choice"<<endl;;
   cin>>option;
 
@@ -362,19 +402,19 @@ public:
   {
   case 1:
    if (option==1)
-    cout<<setw(40)<<"\n\n\n                                WELCOME TO BIMAN BANGLADESH"<<endl;
+    cout<<setw(40)<<"\n\n\n                                WELCOME TO REGENT AIRWAYS"<<endl;
    break;
   case 2:
    if(option==2)
-    cout<<setw(40)<<"\n\n\n                                WELCOME TO US-BANGLA AIRLINES"<<endl;
+    cout<<setw(40)<<"\n\n\n                                WELCOME TO HELLO AIR"<<endl;
    break;
   case 3:
    if(option==3)
-    cout<<setw(40)<<"\n\n\n                                WELCOME TO UNITED AIRWAYS"<<endl;
+    cout<<setw(40)<<"\n\n\n                                WELCOME TO SOUTH ASIAN AIRLINES"<<endl;
    break;
   case 4:
    if(option==4)
-    cout<<setw(40)<<"\n\n\n                                WELCOME TO NOVOAIR"<<endl;
+    cout<<setw(40)<<"\n\n\n                                WELCOME TO EASY FLY EXPRESS"<<endl;
    break;
   }
    cout<<"\n\nTHESE ARE THE INTERNATIONAL PLACES AVAILABLE"<<endl<<endl;
@@ -427,7 +467,7 @@ public:
 
     cout<<" FLIGHT AVAILABLE ON THIS ROUTE"<<endl;
 
-    b1_seat=30;
+    b1_seat=70;
 
     e1_seat=40;
 
@@ -440,7 +480,7 @@ public:
     cout<<"\n\n\n\n\n\n";
 
   cout<<setw(60)<<"*************************************"<<endl;
-        cout<<setw(60)<<"*     Press 1 for buisness class    *"<<endl;
+  cout<<setw(60)<<"*     Press 1 for buisness class    *"<<endl;
   cout<<setw(60)<<"*     Press 2 for economy class     *"<<endl;
   cout<<setw(60)<<"*************************************"<<endl<<endl<<endl<<endl;
 
@@ -545,14 +585,16 @@ public:
 }
  };
 
-        class main1
+
+
+class ADMIN
 
  {
  private:
 
   char f;
 
-  int menu_choice;
+  int choice;
 
   char a;
 
@@ -582,15 +624,16 @@ m:
    cout<<setw(60)<<"*                        PRESS 1 FOR LOCAL BOOKING         PRESS 2 FOR INTERNATIONAL BOOKING             1        *"<<endl;
    cout<<setw(60)<<"*                                                                                                                 *"<<endl;
    cout<<setw(60)<<"*                                     PRESS 3 FOR SEARCH OF FLIGHTS                                               *"<<endl;
-   cout<<setw(60)<<"*                                                                                                                *"<<endl;
+   cout<<setw(60)<<"*                                                                                                                 *"<<endl;
    cout<<setw(60)<<"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"<<endl;
    cout<<setw(60)<<"###################################################################################################################"<<endl;
    cout<<endl<<endl<<setw(80)<<"Enter your choice please :";
 
 
-   cin>>menu_choice;
+   cin>>choice;
 
   system("cls");
+  system("color 8f");
 
    passenger* p1;
 
@@ -603,7 +646,7 @@ m:
    char back;
 
 
-   switch(menu_choice)
+   switch(choice)
 
    {
 
@@ -734,7 +777,7 @@ int LoginCheck (string user, string pass)
     }
     else
     {
-        cout << "file not open" << endl;
+        cout << "!!! SORRY SYSTEM IS NOT WORKING !!!" << endl;
     }
     return 0;
 }
@@ -815,14 +858,14 @@ void loginto()
 
             }
             userfile.close();
-            main1 m2;
+            ADMIN m2;
           m2.getdata();
 
         }
         else if (option==2)
         {
             Register();
-            main1 m2;
+            ADMIN m2;
           m2.getdata();
 
         }
@@ -873,17 +916,20 @@ class login
 
  };
 
+
+
 int main()
 {
- SetConsoleTitle("AIRWAYS RESERVATION");
+ SetConsoleTitle("AIRWAYS RESERVATION OF BANGLADESH");
  system("color 9f");
  cout<<"\n\n\n\n\n\n\n\n\n\n\t\tWELCOME TO AIRWAYS RESERVATION SYSTEM";
  Sleep(2500);
  system ("cls");
  cout<<"\n\n\n\n\n\n\n\t\t          Developed by :";
  Sleep(500);
-  cout<<"\n\t\t\t\t\t ANUPAM DAS ... ID NO. :1604054"<<endl<<"\n\t\t\t\t\tA.R.SANAULLAH ... ID NO.:1604050"<<endl<<"\n\t\t\t\t\tAKRAM HOSSAIN NAKIB ... ID NO.:1604057"<<endl;
-  Sleep(500);
+  cout<<"\n\t\t\t\t\t ANUPAM DAS ... ID NO. :1604054"<<endl<<"\n\t\t\t\t\tA.R.SANAULLAH ... ID NO.:1604050"<<endl<<"\n\t\t\t\t\tAKRAM HOSSAIN NAKIB ... ID NO.:1604057\n\n\n\n"<<endl;
+  cout<<"\n\t\t\t\t\t SPECIAL THANKS TO MD. SABIR HOSSAIN"<<endl<<"\n\t\t\t\t\t LECTURER,DEPT. OF CSE,CUET"<<endl;
+  Sleep(5000);
  Sleep(3000);
  system("cls");
  login m1;
